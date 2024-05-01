@@ -7,12 +7,8 @@ app.get("/", (req, res) => {
   res.send("<h1>HOME</h1>");
 });
 
-app.get("/about", (req, res) => {
-  res.send("<h1>ABOUT </h1>");
-});
-
-app.get("/contact", (req, res) => {
-  res.send("<h1>CONTACT</h1>");
+app.post("/", (req, res) => {
+  const userName = req.body.name;
 });
 
 app.listen(port, () => {
