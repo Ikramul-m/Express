@@ -1,4 +1,8 @@
-const express = require("express")
+const express = require("express");
 
+const app = express();
+const port = 4000;
 
-const app = express()
+app.listen(port, () => {
+  console.log(`Server is working on port: ${port}`);
+});
