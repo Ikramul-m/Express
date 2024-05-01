@@ -12,7 +12,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/v1/login", (req, res) => {
-  res.send("<h1>Done</h1>");
+  res.send(
+    `<h1>Done</h1><h2>Name: ${req.body.name}</h2><h2>Email id: ${req.body.email}</h2>`
+  );
   console.log(req.body);
 });
 
