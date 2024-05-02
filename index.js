@@ -21,9 +21,6 @@ app.post("/api/v1/register", (req, res) => {
 
   res.json({
     success: true,
-    name: userName,
-    email: userEmail,
-    password: userPassword,
   });
 });
 
