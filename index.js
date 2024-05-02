@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.post("/api/v1/register",);
+// app.post("/",);
 
 app.listen(PORT, hostName, () => {
   console.log(`Server is working on http://${hostName}:${PORT}`);
