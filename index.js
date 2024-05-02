@@ -5,9 +5,11 @@ const { emit } = require("process");
 
 const app = express();
 
+
 const PORT = 4000;
 const hostName = "localhost";
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json())
 
 app.get("/api/v1/userData", (req, res) => {
   res.json({
@@ -18,6 +20,7 @@ app.get("/api/v1/userData", (req, res) => {
 });
 
 app.post("/api/v1/register", (req, res) => {
+
   const userName = req.body.name;
   const userEmail = req.body.email;
   const userPassword = req.body.password;
@@ -28,6 +31,7 @@ app.post("/api/v1/register", (req, res) => {
     email: userEmail,
     password: userPassword,
   });
+
 });
 
 app.listen(PORT, hostName, () => {
