@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const { emit } = require("process");
 
 const app = express();
 
@@ -12,15 +13,21 @@ app.get("/api/v1/userData", (req, res) => {
   res.json({
     name: "Ikram",
     email: "kram@gamil.com",
-    password: "password"
-  })
+    password: "password",
+  });
 });
 
-app.post("/api/v1/login", (req, res) => {
-  // const usename = req.body.name;
-  res.send(`<h2>Name: ${req.body.name}</h2> <h2>Email: ${req.body.email}</h2>`);
-  // console.log("name");
-  console.log(req.body);
+app.post("/api/v1/register", (req, res) => {
+  const userName = req.body.name;
+  const userEmail = req.body.email;
+  const userPassword = req.body.password;
+
+  res.json({
+    success: true,
+    name: userName,
+    email: userEmail,
+    password: userPassword,
+  });
 });
 
 app.listen(PORT, hostName, () => {
