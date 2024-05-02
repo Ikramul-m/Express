@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 app.post("/api/v1/login", (req, res) => {
   // const usename = req.body.name;
-  res.send("<h1>Done</h1>");
+  res.send(`Name: ${req.body.name}\nEmail: ${req.body.email}}`);
   // console.log("name");
   console.log(req.body);
 });
