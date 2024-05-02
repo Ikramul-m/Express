@@ -14,15 +14,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.post("/api/v1/register", (req, res) => {
-  const userName = req.body.name;
-  const userEmail = req.body.email;
-  const userPassword = req.body.password;
-
-  res.json({
-    success: true,
-  });
-});
+app.post("/api/v1/register",);
 
 app.listen(PORT, hostName, () => {
   console.log(`Server is working on http://${hostName}:${PORT}`);
